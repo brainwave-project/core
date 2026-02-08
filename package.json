@@ -1,0 +1,29 @@
+{
+  "name": "@brainwave/core",
+  "version": "1.0.0",
+  "description": "Stateless, domain-agnostic utilities and infrastructure library shared safely across all services",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No tests specified\" && exit 0",
+    "lint": "eslint . --ext .ts,.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brainwave-project/core.git"
+  },
+  "keywords": ["core", "shared", "utilities", "infrastructure"],
+  "author": "Ahmad Awad",
+  "license": "MIT",
+  "type": "module",
+  "files": ["dist"],
+  "devDependencies": {
+    "typescript": "^5.2.0",
+    "eslint": "^8.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/brainwave-project/core/issues"
+  },
+  "homepage": "https://github.com/brainwave-project/core#readme"
+}
