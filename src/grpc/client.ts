@@ -38,7 +38,7 @@ export function createGrpcClient<T>(options: GrpcClientOptions): T {
     oneofs: true,
   });
 
-  const proto = grpc.loadPackageDefinition(packageDef) as Record<
+  const proto = grpc.loadPackageDefinition(packageDef) as unknown as Record<
     string,
     Record<string, new (addr: string, creds: grpc.ChannelCredentials) => T>
   >;
