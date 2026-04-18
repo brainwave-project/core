@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
@@ -27,6 +29,7 @@
     "@types/pino": "^7.0.0",
     "eslint": "^8.0.0",
     "express": "^4.22.1",
+    "semantic-release": "^24.2.9",
     "typescript": "^5.2.0"
   },
   "publishConfig": {
@@ -36,7 +39,12 @@
     "type": "git",
     "url": "git+https://github.com/brainwave-project/core.git"
   },
-  "keywords": ["core", "shared", "utilities", "infrastructure"],
+  "keywords": [
+    "core",
+    "shared",
+    "utilities",
+    "infrastructure"
+  ],
   "author": "Ahmad Awad",
   "license": "MIT"
 }

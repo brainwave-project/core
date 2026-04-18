@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node + GitHub Packages registry
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           # Telling setup-node about the registry makes it write an .npmrc
           # that wires NODE_AUTH_TOKEN automatically — no manual config needed
           registry-url: https://npm.pkg.github.com
