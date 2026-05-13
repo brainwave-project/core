@@ -12,6 +12,9 @@ export { correlationId, CORRELATION_ID_HEADER } from './http/middleware/correlat
 export { requestLogger } from './http/middleware/requestLogger.js';
 export { errorHandler } from './http/middleware/errorHandler.js';
 
+// Telemetry (OTel SDK init + graceful shutdown)
+export { initTelemetry } from './telemetry/index.js';
+
 // gRPC helpers
 export { createGrpcClient } from './grpc/client.js';
 export type { GrpcClientOptions } from './grpc/client.js';
