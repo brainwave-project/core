@@ -20,3 +20,19 @@ export { createGrpcClient } from './grpc/client.js';
 export type { GrpcClientOptions } from './grpc/client.js';
 export { buildMetadata } from './grpc/metadata.js';
 export type { MetadataOptions } from './grpc/metadata.js';
+
+// Kafka — domain event contracts + fire-and-forget producer
+export {
+  KAFKA_TOPICS,
+  CONSUMER_GROUPS,
+  AuditAction,
+  createEventProducer,
+  emitEvent,
+} from './kafka/index.js';
+export type {
+  KafkaTopic,
+  AuditActionType,
+  DomainEvent,
+  EventProducer,
+  ProducerConfig,
+} from './kafka/index.js';
