@@ -36,8 +36,11 @@ export interface EventProducer {
  */
 export async function createEventProducer(config: ProducerConfig): Promise<EventProducer> {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
-    const { Kafka } = require('kafkajs');
+    // Dynamic import — core is ESM so `require` is undefined here. The dynamic
+    // form lets consuming services opt out of Kafka simply by not installing
+    // kafkajs (the import throws ERR_MODULE_NOT_FOUND and we fall through to
+    // the no-op producer below).
+    const { Kafka } = await import('kafkajs');
 
     const kafka = new Kafka({
       clientId: config.clientId,
