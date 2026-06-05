@@ -25,7 +25,8 @@ export type KafkaTopic = typeof KAFKA_TOPICS[keyof typeof KAFKA_TOPICS];
 // Standard consumer group names
 // ---------------------------------------------------------------------------
 export const CONSUMER_GROUPS = {
-  AUDIT_HUB: 'brainwave.audit-hub',
+  AUDIT_HUB:       'brainwave.audit-hub',
+  SEMANTIC_WORKER: 'brainwave.know-hub.semantic-worker',
 } as const;
 
 // ---------------------------------------------------------------------------

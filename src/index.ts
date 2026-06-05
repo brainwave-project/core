@@ -36,3 +36,19 @@ export type {
   EventProducer,
   ProducerConfig,
 } from './kafka/index.js';
+
+// AI — Semantic Layer primitives (chunker, Ollama embedder, query vector cache)
+export {
+  chunkText,
+  embedWithOllama,
+  embedQuery,
+  toPgVector,
+  getQueryVectorCache,
+} from './ai/index.js';
+export type {
+  TextChunk,
+  ChunkOptions,
+  OllamaEmbedOptions,
+  QueryVectorCache,
+  QueryCacheOptions,
+} from './ai/index.js';
