@@ -38,12 +38,17 @@ export type {
 } from './kafka/index.js';
 
 // AI — Semantic Layer primitives (chunker, Ollama embedder, query vector cache)
+//       + Conversational RAG primitives (chat client, grounded prompt assembly).
 export {
   chunkText,
   embedWithOllama,
   embedQuery,
   toPgVector,
   getQueryVectorCache,
+  streamChatWithOllama,
+  assembleRagPrompt,
+  estimateTokens,
+  condenseQueryPrompt,
 } from './ai/index.js';
 export type {
   TextChunk,
@@ -51,4 +56,12 @@ export type {
   OllamaEmbedOptions,
   QueryVectorCache,
   QueryCacheOptions,
+  ChatRole,
+  ChatMessage,
+  RagContextChunk,
+  OllamaChatOptions,
+  ChatUsage,
+  ChatToken,
+  AssemblePromptParams,
+  AssembledPrompt,
 } from './ai/index.js';
