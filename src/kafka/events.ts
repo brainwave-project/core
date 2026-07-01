@@ -27,6 +27,9 @@ export type KafkaTopic = typeof KAFKA_TOPICS[keyof typeof KAFKA_TOPICS];
 export const CONSUMER_GROUPS = {
   AUDIT_HUB:       'brainwave.audit-hub',
   SEMANTIC_WORKER: 'brainwave.know-hub.semantic-worker',
+  // Phase 3: agent-hub's ingestion crew replaces the in-process semantic worker
+  // (ADR-AGT-05). A NEW group so the cutover is a clean consumer-group switch.
+  INGESTION_CREW:  'brainwave.agent-hub.ingestion-crew',
 } as const;
 
 // ---------------------------------------------------------------------------
@@ -51,6 +54,10 @@ export const AuditAction = {
   DOCUMENT_ARCHIVED:    'DOCUMENT_ARCHIVED',
   DOCUMENT_DELETED:     'DOCUMENT_DELETED',
 
+  // Phase 3 — agentic ingestion crew (agent-hub)
+  DOCUMENT_CLASSIFIED:  'DOCUMENT_CLASSIFIED',  // Classifier decided doc_type/topic
+  DOCUMENT_INDEXED:     'DOCUMENT_INDEXED',     // crew finished indexing
+
   // Notes
   NOTE_CREATED: 'NOTE_CREATED',
 } as const;
@@ -68,7 +75,7 @@ export interface DomainEvent {
   occurredAt: string;
 
   /** Which service emitted the event */
-  service: 'auth-hub' | 'user-hub' | 'know-hub';
+  service: 'auth-hub' | 'user-hub' | 'know-hub' | 'agent-hub';
 
   /** The action that was performed */
   action: AuditActionType;
